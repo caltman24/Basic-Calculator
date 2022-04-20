@@ -26,12 +26,16 @@ class Calculator {
       this.calculate();
       this.operator = operation;
     } else {
+      // check if both operands are empty then return (if user selects an operator with no operand)
+      if (this.previousOperand === "" && this.currentOperand === "") return;
+
       // if the calculator's operator is not undefined then set it equal to the selected operation and return
       // (if the user selects a different operator consecutivly)
       if (this.operator !== undefined) {
         this.operator = operation;
         return;
       }
+
       /* 
         if the other two conditions don't check, then set the calculator's operator to
         the selected operation and check if previousOperand has content then calculate 
