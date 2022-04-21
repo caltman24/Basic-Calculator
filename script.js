@@ -51,6 +51,8 @@ class Calculator {
   }
 
   calculate() {
+    if (this.previousOperand !== "" && this.currentOperand === "") return
+
     let calculation;
     let previous = parseFloat(this.previousOperand);
     let current = parseFloat(this.currentOperand);
