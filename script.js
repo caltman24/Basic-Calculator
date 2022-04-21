@@ -73,7 +73,7 @@ class Calculator {
       default:
         return;
     }
-    if ((calculation > 999, 999, 999, 999)) {
+    if ((calculation > 999999999999)) {
       calculation = calculation.toExponential(4);
     }
     calculation = calculation.toLocaleString("en", {
