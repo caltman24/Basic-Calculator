@@ -4,12 +4,11 @@
 }
 
 body {
-  max-width: 100vw;
   min-height: 100vh;
   background: #8ac5c1;
   background: -webkit-linear-gradient(bottom left, #8ac5c1, #436579);
   background: -moz-linear-gradient(bottom left, #8ac5c1, #436579);
-  background: linear-gradient(to top right, #8ac5c1, #436579);
+  background: linear-gradient(top right, #8ac5c1, #436579);
   display: flex;
   justify-content: center;
   align-items: center;
