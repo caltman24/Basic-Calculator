@@ -73,12 +73,13 @@ class Calculator {
       default:
         return;
     }
-    if ((calculation > 999999999999)) {
+    if (calculation > 99999999999) {
       calculation = calculation.toExponential(4);
     }
     calculation = calculation.toLocaleString("en", {
       maximumFractionDigits: 5,
     });
+    console.log(calculation);
 
     this.currentOperand = calculation;
     // empty previousOperand after calculation
@@ -111,11 +112,6 @@ class Calculator {
       this.previousOpernadElement.innerText = `${this.previousOperand} ${this.operator}`;
     } else {
       this.previousOpernadElement.innerText = "";
-    }
-    if (this.currentOperandElement.innerText !== "") {
-      this.currentOperandElement.innerText = parseFloat(
-        this.currentOperand.replace(/,/g, "")
-      ).toLocaleString("en");
     }
   }
 }
