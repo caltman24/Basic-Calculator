@@ -15,6 +15,7 @@ body {
   align-items: center;
 }
 
+
 .calculator {
   margin: 0.45em;
   display: flex;
@@ -25,7 +26,7 @@ body {
   border-radius: 10px;
   padding: 0.75rem;
   min-height: 100%;
-  max-width: 100%;
+  max-width: 35rem;
 }
 
 .calculator_display {
@@ -38,7 +39,11 @@ body {
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
   height: 8rem;
+  max-width: 100%;
+  resize: none;
 }
+
+
 
 .previous-operand {
   color: grey;
@@ -134,4 +139,8 @@ body {
 .equal {
   grid-area: equal;
   border-bottom-right-radius: 0.2em;
+}
+
+.shrink {
+  font-size: 60%;
 }

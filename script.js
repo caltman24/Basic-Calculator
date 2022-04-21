@@ -35,7 +35,6 @@ class Calculator {
         this.operator = operation;
         return;
       }
-
       /* 
         if the other two conditions don't check, then set the calculator's operator to
         the selected operation and check if previousOperand has content then calculate 
@@ -51,7 +50,7 @@ class Calculator {
   }
 
   calculate() {
-    if (this.previousOperand !== "" && this.currentOperand === "") return
+    if (this.previousOperand !== "" && this.currentOperand === "") return;
 
     let calculation;
     let previous = parseFloat(this.previousOperand);
@@ -77,13 +76,25 @@ class Calculator {
     this.previousOperand = "";
     // reset operation after calculation
     this.operator = undefined;
+    // if current operand length is 9 digits or more than apply shrink class (font-size: 60%)
+    if (this.currentOperand.length >= 9) {
+      this.currentOperandElement.classList.add("shrink");
+    }
   }
 
   appendNumber(number) {
     // return if current operand already contains a decimal
     if (number === "." && this.currentOperand.includes(".")) return;
+
+    // check if calculator's current operand's length is 9 or more digits than return
+    if (this.currentOperandElement.innerText.length >= 9) return;
+
     // append number to current operand string
     this.currentOperand = this.currentOperand.toString() + number.toString();
+    // check if current operand starts with a deciaml and prepend a 0;
+    if (this.currentOperand.startsWith(".")) {
+      this.currentOperand = "0" + this.currentOperand;
+    }
   }
 
   updateDisplay() {
