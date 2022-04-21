@@ -141,6 +141,10 @@ body {
   border-bottom-right-radius: 0.2em;
 }
 
-.shrink {
+.shrink-60 {
   font-size: 60%;
+}
+
+.shrink-70 {
+  font-size: 70%;
 }

@@ -35,6 +35,7 @@ class Calculator {
         this.operator = operation;
         return;
       }
+
       /* 
         if the other two conditions don't check, then set the calculator's operator to
         the selected operation and check if previousOperand has content then calculate 
@@ -50,11 +51,12 @@ class Calculator {
   }
 
   calculate() {
+    // check if previousOperand isnt empty and current is empty then return
     if (this.previousOperand !== "" && this.currentOperand === "") return;
 
     let calculation;
-    let previous = parseFloat(this.previousOperand);
-    let current = parseFloat(this.currentOperand);
+    let previous = parseFloat(this.previousOperand.replace(/,/g, ""));
+    let current = parseFloat(this.currentOperand.replace(/,/g, ""));
     switch (this.operator) {
       case "+":
         calculation = previous + current;
@@ -71,24 +73,29 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = calculation.toString();
+    if ((calculation > 999, 999, 999, 999)) {
+      calculation = calculation.toExponential(4);
+    }
+    calculation = calculation.toLocaleString("en", {
+      maximumFractionDigits: 5,
+    });
+
+    this.currentOperand = calculation;
     // empty previousOperand after calculation
     this.previousOperand = "";
     // reset operation after calculation
     this.operator = undefined;
     // if current operand length is 9 digits or more than apply shrink class (font-size: 60%)
     if (this.currentOperand.length >= 9) {
-      this.currentOperandElement.classList.add("shrink");
+      this.currentOperandElement.classList.add("shrink-70");
     }
   }
 
   appendNumber(number) {
     // return if current operand already contains a decimal
     if (number === "." && this.currentOperand.includes(".")) return;
-
     // check if calculator's current operand's length is 9 or more digits than return
-    if (this.currentOperandElement.innerText.length >= 9) return;
-
+    if (this.currentOperandElement.innerText.length >= 11) return;
     // append number to current operand string
     this.currentOperand = this.currentOperand.toString() + number.toString();
     // check if current operand starts with a deciaml and prepend a 0;
@@ -104,6 +111,11 @@ class Calculator {
       this.previousOpernadElement.innerText = `${this.previousOperand} ${this.operator}`;
     } else {
       this.previousOpernadElement.innerText = "";
+    }
+    if (this.currentOperandElement.innerText !== "") {
+      this.currentOperandElement.innerText = parseFloat(
+        this.currentOperand.replace(/,/g, "")
+      ).toLocaleString("en");
     }
   }
 }
