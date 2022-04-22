@@ -2,24 +2,25 @@
   color: rgb(220, 218, 218);
 }
 
-
 body {
+  margin: 0;
   display: grid;
   place-items: center;
   min-height: 100vh;
-  background: #8ac5c1;
-  background: linear-gradient(to top right, #8ac5c1, #436579);
-  margin: 0;
+  /* Created with https://www.css-gradient.com */
+  background: #67a2b3;
+  background: -webkit-linear-gradient(top left, #67a2b3, #1d7d5e);
+  background: -moz-linear-gradient(top left, #67a2b3, #1d7d5e);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-
 
 .calculator {
   background-color: rgba(0, 0, 0, 0.104);
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 0.75rem;
-  max-width: 100%;
-  max-width: -webkit-fill-available;
 }
 
 .calculator_display {
@@ -32,19 +33,17 @@ body {
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
   height: 8rem;
-  resize: none;
+  font-size: 5rem;
 }
-
-
 
 .previous-operand {
   color: grey;
-  font-size: 35%
+  font-size: 35%;
 }
 
 .calculator_keys {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 7rem);
   grid-template-areas:
     ". . . ."
     "plus minus times divide"
@@ -59,12 +58,13 @@ body {
 
 .calculator_keys > button,
 .calculator_display {
-  font-size: 4rem;
   border: none;
 }
 
 .calculator_keys > button {
   background: transparent;
+  padding: 0.5em;
+  font-size: 3em;
 }
 
 button.clear {
@@ -72,11 +72,11 @@ button.clear {
 }
 
 .calculator_keys > button:hover {
-  background: rgba(0, 0, 0, 0.087)
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.087);
 }
 
-.calculator_keys > button:active {
-  background: rgba(0, 0, 0, 0.23)
+.calculator_keys > button:active{
+  background: rgba(0, 0, 0, 0.141);
 }
 
 .plus {
