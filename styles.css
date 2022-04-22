@@ -57,7 +57,7 @@ body {
     "one two three equal"
     "zero decimal clear equal";
   background-color: rgba(5, 5, 5, 0.208);
-  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
@@ -86,7 +86,6 @@ button.clear {
 
 .plus {
   grid-area: plus;
-  border-top-left-radius: 0.3em;
 }
 .minus {
   grid-area: minus;
@@ -96,7 +95,6 @@ button.clear {
 }
 .divide {
   grid-area: divide;
-  border-top-right-radius: 0.3em;
 }
 .nine {
   grid-area: nine;
@@ -128,7 +126,6 @@ button.clear {
 }
 .zero {
   grid-area: zero;
-  border-bottom-left-radius: 0.2em;
 }
 .decimal {
   grid-area: decimal;
@@ -138,7 +135,6 @@ button.clear {
 }
 .equal {
   grid-area: equal;
-  border-bottom-right-radius: 0.2em;
 }
 
 .shrink-60 {
