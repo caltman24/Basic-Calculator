@@ -7,6 +7,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   /* Created with https://www.css-gradient.com */
   background: #67a2b3;
   background: -webkit-linear-gradient(top left, #67a2b3, #1d7d5e);
