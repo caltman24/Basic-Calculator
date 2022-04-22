@@ -44,7 +44,7 @@ body {
 
 .calculator_keys {
   display: grid;
-  grid-template-columns: repeat(4, 7rem);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     ". . . ."
     "plus minus times divide"
