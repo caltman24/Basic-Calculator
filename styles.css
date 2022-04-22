@@ -7,7 +7,6 @@
 body {
   margin: 0;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   /* Created with https://www.css-gradient.com */
   background: #67a2b3;
   background: -webkit-linear-gradient(top left, #67a2b3, #1d7d5e);
@@ -15,6 +14,8 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  display: grid;
+  place-items: center;
 }
 
 .calculator {
@@ -23,7 +24,7 @@ body {
   border-radius: 10px;
   padding: 0.75rem;
   max-width: 30rem;
-  margin: 1rem auto 0 auto;
+  margin: 0 auto;
 }
 
 .calculator_display {
