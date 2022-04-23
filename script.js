@@ -4,9 +4,11 @@ class Calculator {
   constructor(previousOpernadElement, currentOperandElement) {
     this.previousOpernadElement = previousOpernadElement;
     this.currentOperandElement = currentOperandElement;
+    this.isEntered = false;
     // Clear calculator on new reference
     this.clear();
   }
+
 
   // set both operands to an empty string and set the operator to undefined
   clear() {
@@ -97,6 +99,12 @@ class Calculator {
     if (number === "." && this.currentOperand.includes(".")) return;
     // check if calculator's current operand's length is 9 or more digits than return
     if (this.currentOperandElement.innerText.length >= 11) return;
+
+    if (this.isEntered) {
+      this.clear()
+      this.isEntered = false;
+    }
+
     // append number to current operand string
     this.currentOperand = this.currentOperand.toString() + number.toString();
     // check if current operand starts with a deciaml and prepend a 0;
@@ -148,6 +156,7 @@ operatorButtons.forEach((button) => {
 // equal button event listener
 equalButton.addEventListener("click", () => {
   calculator.calculate();
+  calculator.isEntered = true;
   calculator.updateDisplay();
 });
 
