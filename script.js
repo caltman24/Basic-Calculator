@@ -100,7 +100,7 @@ class Calculator {
     // check if calculator's current operand's length is 9 or more digits than return
     if (this.currentOperandElement.innerText.length >= 11) return;
 
-    if (this.isEntered) {
+    if (this.isEntered && this.operator === undefined) {
       this.clear()
       this.isEntered = false;
     }
